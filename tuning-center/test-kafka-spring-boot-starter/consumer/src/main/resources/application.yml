@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers:
+          - 47.99.88.28:9092
+      bindings:
+        input:  #通道名称 @Input(Sink.INPUT)
+          consumer:            max-attempts: 1  #通道发送消息失败时的重试次数
+          destination: test1
+          content-type:  application/json
+          group: input-group-1
+         
+
